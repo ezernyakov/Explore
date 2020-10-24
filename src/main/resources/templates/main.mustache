@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Explore It - Main Page</title>
+    {{>parts/meta}}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+{{>parts/menu}}
+
+<div class="container">
+    <div class=mt-5>
+        <form method="post">
+            <h2 class="text-primary">Enter session Token here:</h2><br>
+            <input type="text" name="code" size="80" placeholder="Enter session Token"/>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+</div>
+
+{{>parts/footer}}
+{{>parts/scripts}}
+
+</body>
+</html>

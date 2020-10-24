@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Explore It - Project's List</title>
+    {{>parts/meta}}
+</head>
+
+<body>
+{{>parts/menu}}
+
+<h2 class="text-primary">Project's List:</h2><br>
+<div class="container-fluid mt-3">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#projects}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{description}}</td>
+
+            </tr>
+        {{/projects}}
+        </tbody>
+    </table>
+</div>
+
+{{>parts/scripts}}
+</body>
+
+</html>

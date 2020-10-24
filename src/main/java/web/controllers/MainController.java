@@ -11,17 +11,17 @@ import java.util.Map;
 public class MainController {
 
     @GetMapping("/")
-    public String main(Map<String, Object> model) {
+    public String main() {
         return "main";
     }
 
     @PostMapping
-    public String add(@RequestParam String code, Map<String, Object> model) {
+    public String add() {
         return "main";
     }
 
     @GetMapping("/error")
-    public String error(Map<String, Object> model) {
+    public String error() {
         return "main";
     }
 }

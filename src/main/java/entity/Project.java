@@ -11,7 +11,7 @@ public class Project {
 
     public Project(String name, String description) {
         if(count == null) {
-            count = new AtomicInteger(0);
+            count = new AtomicInteger(1);
         }
         this.id = "PR-" + count.getAndIncrement();
         this.name = name;

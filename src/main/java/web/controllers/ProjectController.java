@@ -21,10 +21,12 @@ public class ProjectController {
     }
 
     @PostMapping("/add")
-    public String createProject(@RequestParam String name, @RequestParam String description) {
+    public String createProject(@RequestParam String name, @RequestParam String description, Map<String, Object> model) {
         Project project = new Project(name, description);
         projects.add(project);
-        return "main";
+
+        model.put("projects", projects);
+        return "project/list";
     }
 
     @PostMapping("/edit")

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Explore It - Add New Project</title>
+    {{>parts/meta}}
+</head>
+
+<body>
+{{>parts/menu}}
+
+<div class="container">
+    <div class=mt-5>
+        <form method="post">
+            <h2 class="text-primary">Project name:</h2><br>
+            <input type="text" name="name" size="60" placeholder="Enter project name"/>
+            <h2 class="text-primary">Project description:</h2><br>
+            <input type="text" name="description" size="100" placeholder="Project description"/>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+{{>parts/footer}}
+{{>parts/scripts}}
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Explore It - Project's List</title>
+    {{>parts/meta}}
+</head>
+
+<body>
+{{>parts/menu}}
+
+<h2 class="text-primary">Project's List:</h2><br>
+<div class="container-fluid mt-3">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#projects}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{description}}</td>
+                <td>
+                    <form method="post" action="/project/edit">
+                        <input type="hidden" name="id" value="{{id}}"/>
+                        <input type="hidden" name="name" value="{{name}}"/>
+                        <input type="hidden" name="description" value="{{description}}"/>
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form method="post" action="/project/list">
+                        <input type="hidden" name="id" value="{{id}}"/>
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        {{/projects}}
+        </tbody>
+    </table>
+</div>
+
+{{>parts/footer}}
+{{>parts/scripts}}
+</body>
+
+</html>

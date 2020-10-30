@@ -1,13 +1,16 @@
 package entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Project {
 
-    private String id;
+    private final String id;
     private String name;
     private String description;
     private static AtomicInteger count;
+    private List<Section> sections = new ArrayList<>();
 
     public Project(String name, String description) {
         if(count == null) {
@@ -42,5 +45,13 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void addSection(Section section) {
+        sections.add(section);
     }
 }

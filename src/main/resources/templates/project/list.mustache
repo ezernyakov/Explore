@@ -28,8 +28,6 @@
                 <td>
                     <form method="post" action="/project/edit">
                         <input type="hidden" name="id" value="{{id}}"/>
-                        <input type="hidden" name="name" value="{{name}}"/>
-                        <input type="hidden" name="description" value="{{description}}"/>
                         <button type="submit">Edit</button>
                     </form>
                     <form method="post" action="/project/list">
@@ -38,8 +36,6 @@
                     </form>
                     <form method="post" action="/project/view/{{id}}/">
                         <input type="hidden" name="id" value="{{id}}"/>
-                        <input type="hidden" name="name" value="{{name}}"/>
-                        <input type="hidden" name="description" value="{{description}}"/>
                         <button type="submit">View</button>
                     </form>
                 </td>

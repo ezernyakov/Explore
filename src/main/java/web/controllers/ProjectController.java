@@ -26,8 +26,7 @@ public class ProjectController {
     }
 
     @PostMapping("/edit")
-    public String openEditProjectPage(@RequestParam String id, @RequestParam String name, @RequestParam String description,
-                                      Map<String, Object> model) {
+    public String openEditProjectPage(@RequestParam String id, Map<String, Object> model) {
 
         Project project = Context.getProject(id);
         model.put("project", project);
@@ -64,8 +63,7 @@ public class ProjectController {
     }
 
     @PostMapping(value="/view/*")
-    public String openProjectView(@RequestParam String id, @RequestParam String name, @RequestParam String description,
-                                  Map<String, Object> model) {
+    public String openProjectView(@RequestParam String id, Map<String, Object> model) {
         Project project = Context.getProject(id);
         model.put("project", project);
         return "project/view";

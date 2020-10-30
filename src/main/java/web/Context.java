@@ -1,3 +1,5 @@
+package web;
+
 import entity.Project;
 
 import java.util.ArrayList;
@@ -17,12 +19,12 @@ public class Context {
     }
 
     public static void addProject(Project newProject) {
-        for(Project oldProject: projects) {
-            if(oldProject.getId().equals(newProject.getId())) {
-                projects.remove(oldProject);
-            }
-        }
+        projects.removeIf(oldProject -> oldProject.getId().equals(newProject.getId()));
         projects.add(newProject);
+    }
+
+    public static void removeProject(String id) {
+        projects.removeIf(project -> project.getId().equals(id));
     }
 
     public static List<Project> getProjectsList() {

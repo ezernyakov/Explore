@@ -66,6 +66,7 @@ public class ProjectController {
     public String openProjectView(@RequestParam String id, Map<String, Object> model) {
         Project project = Context.getProject(id);
         model.put("project", project);
+        model.put("sections", project.getSections());
         return "project/view";
     }
 

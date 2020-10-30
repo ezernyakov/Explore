@@ -65,4 +65,12 @@ public class ProjectController {
         return "project/list";
     }
 
+    @PostMapping(value="/view/*")
+    public String openProjectView(@RequestParam String id, @RequestParam String name, @RequestParam String description,
+                                  Map<String, Object> model) {
+        currentProject = new Project(id, name, description);
+        model.put("project", currentProject);
+        return "project/view";
+    }
+
 }

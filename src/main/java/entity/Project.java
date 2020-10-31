@@ -54,4 +54,18 @@ public class Project {
     public void addSection(Section section) {
         sections.add(section);
     }
+
+    public void removeSection(String id) {
+        sections.removeIf(section -> section.getId().equals(id));
+    }
+
+    public void editSection(String id, String name) {
+        for(Section section: sections) {
+            if(section.getId().equals(id)) {
+                sections.remove(section);
+                section.setName(name);
+                sections.add(section);
+            }
+        }
+    }
 }

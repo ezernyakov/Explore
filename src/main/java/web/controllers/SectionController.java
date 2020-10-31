@@ -25,5 +25,15 @@ public class SectionController {
         return "project/view";
     }
 
+    @PostMapping(value="/view", params={"projectId", "sectionId", "delete"})
+    public String removeSection(@RequestParam String projectId, @RequestParam String sectionId, Map<String, Object> model) {
+        Project project = Context.getProject(projectId);
+        project.removeSection(sectionId);
+
+        model.put("project", project);
+        model.put("sections", project.getSections());
+        return "project/view";
+    }
+
 
 }

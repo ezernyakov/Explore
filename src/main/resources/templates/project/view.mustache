@@ -15,7 +15,14 @@
         <h3 class="text-primary">{{project.description}}</h3><br>
         <h3 class="text-primary">Sections:</h3><br>
         {{#sections}}
-            <h4 class="text-primary">{{name}}</h4><br>
+            <h4 class="text-primary">{{name}}</h4>
+            <form method="post" action="/project/view">
+                <input type="hidden" name="projectId" value="{{project.id}}"/>
+                <input type="hidden" name="sectionId" value="{{id}}"/>
+                <input type="hidden" name="delete"/>
+                <button type="submit">Remove</button>
+            </form>
+            <br>
         {{/sections}}
         <form method="post" action="/project/view">
             <input type="hidden" name="id" value="{{project.id}}"/>
